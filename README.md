@@ -24,6 +24,8 @@ This will build your app and start watching for changes at `http://localhost:500
 - `app/pages/index.html` is the app's index page
 - Folders can be added within `app/pages/` eg `app/pages/your-section-name/index.html`
 
+Gulp sends your HTML into `build/` eg `build/index.html`, `build/about-us/index.html`.
+
 ####CSS
 
 - `app/css/` for all your SCSS
@@ -38,5 +40,7 @@ Any new components, shared or utils files you create must be imported in `app/cs
 Reminder: any new SCSS files you create that use variables need to `@import 'variables';` at the top, and if they include any mixins you've added, they need to `@import 'mixins/your-mixin-name'` as well!
 
 ####JS
+
+`app/js/` -> `build/assets/app.js`
 
 Instructions coming soon! ie When I improve the Angular setup.
