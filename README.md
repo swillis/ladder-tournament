@@ -3,9 +3,9 @@ jsbp: James' Front-end boilerplate
 
 Gulp + SASS + Browserify + Angular
 
-# Running locally:
+### Running locally:
 
 ```
-npm install
-gulp build
+$ npm install
+$ gulp build
 ```
