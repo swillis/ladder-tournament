@@ -41,7 +41,7 @@ Gulp sends your HTML into `build/` eg `build/index.html` and `build/your-section
 
 - `app/css/` for all your SCSS
 - `app/css/components/` for individual components or modules
-- `app/css/shared/` for your most general rules (eg html, body)
+- `app/css/shared/` for your most general rules (eg normalize.css, basic rules for html, body, etc)
 - `app/css/utils/` for utilities (à la https://github.com/suitcss/utils)
 - `app/css/variables.scss` for all your SASS variables
 - `app/css/mixins/` for your SASS mixins
