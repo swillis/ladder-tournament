@@ -12,6 +12,15 @@ _Powered by: [Gulp](http://gulpjs.com/) + [SASS](http://sass-lang.com/) + [Brows
 
 ### Running locally
 
+First, install [Gulp](http://gulpjs.com/) if you don't have it already:
+
+```
+$ npm install -g gulp
+```
+(You might need to run `$ sudo npm install -g gulp` if that doesn't work)
+
+Next:
+
 ```
 $ npm install
 $ gulp start
