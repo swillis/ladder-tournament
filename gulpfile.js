@@ -9,7 +9,8 @@ var jshint = require('gulp-jshint'),
     rename = require('gulp-rename'),
     connect = require('gulp-connect'),
     browserify = require('gulp-browserify'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    open = require('gulp-open');
 
 
 // Connect with Live Reload:
@@ -54,7 +55,16 @@ gulp.task('browserify', function() {
   // Bundle to a single file
   .pipe(concat('app.js'))
   // Output it to our dist folder
-  .pipe(gulp.dest('./build/assets/js/'));
+  .pipe(gulp.dest('./build/assets/js/'))
+  .pipe(connect.reload());
+});
+
+gulp.task("open", function(){
+  var options = {
+    url: "http://localhost:5000"
+  };
+  gulp.src("./build/index.html")
+      .pipe(open("", options));
 });
 
 // Watch Files For Changes
@@ -65,4 +75,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('start', ['connect', 'lint', 'sass', 'browserify', 'html', 'watch']);
+gulp.task('start', ['connect', 'lint', 'sass', 'browserify', 'html', 'watch', 'open']);

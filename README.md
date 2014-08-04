@@ -15,7 +15,9 @@ $ npm install
 $ gulp start
 ```
 
-This will build your app and start watching for changes at `http://localhost:5000`.
+This will build your app and start watching for changes at `http://localhost:5000` (which will be launched in your default browser after running `$ gulp start`.
+
+Any changes to HTML, SCSS & JS will cause open browser sessions to reload - currently seems to be a bit slow and occasionally unresponsive for JS.
 
 ### How it works (sort of)
 
@@ -24,7 +26,7 @@ This will build your app and start watching for changes at `http://localhost:500
 - `app/pages/index.html` is the app's index page
 - Folders can be added within `app/pages/` eg `app/pages/your-section-name/index.html`
 
-Gulp sends your HTML into `build/` eg `build/index.html`, `build/about-us/index.html`.
+Gulp sends your HTML into `build/` eg `build/index.html`, `build/your-section-name/index.html`.
 
 ####CSS
 
