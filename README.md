@@ -1,4 +1,4 @@
-jsbp: James' Front-end boilerplate
+jsbp: James' front-end boilerplate
 ==================================
 
 I wanted to play with Gulp, and I also wanted to better understand how to implement a decently-organised Angular setup within a build tool. These helped a lot:
