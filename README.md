@@ -6,7 +6,7 @@ I wanted to play with [Gulp](http://gulpjs.com/), and I also wanted to better un
 - http://travismaynard.com/writing/getting-started-with-gulp
 - http://mindthecode.com/lets-build-an-angularjs-app-with-browserify-and-gulp/
 
-Ultimately it would probably be easier and safer to use something like [Yeoman](http://yeoman.io/), but where's the fun in that?
+SASS + Autoprefixer + source maps ftw.
 
 ### Running locally
 

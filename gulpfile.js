@@ -10,7 +10,8 @@ var jshint = require('gulp-jshint'),
     connect = require('gulp-connect'),
     browserify = require('gulp-browserify'),
     gutil = require('gulp-util'),
-    open = require('gulp-open');
+    open = require('gulp-open'),
+    autoprefixer = require('gulp-autoprefixer');
 
 
 // Connect with Live Reload:
@@ -39,7 +40,12 @@ gulp.task('lint', function() {
 // Compile Our Sass
 gulp.task('sass', function() {
     return gulp.src('./app/css/main.scss')
-        .pipe(sass())
+        .pipe(sass({sourceComments: 'map', sourceMap: 'sass'}))
+        .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", {
+          map: true,
+          from: 'something', // string needs to exist to not break build, but aren't used!
+          to: 'something' // string needs to exist to not break build, but aren't used!
+        }))
         .pipe(gulp.dest('./build/assets/css'))
         .pipe(connect.reload());
 });
