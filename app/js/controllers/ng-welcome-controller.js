@@ -1,7 +1,7 @@
 'use strict';
 
 var NgWelcomeCtrl = function($scope) {
-  $scope.testVar = 'We are up and running from a required module!';
+  $scope.testVar = 'This is being controlled by NgWelcomeCtrl';
 };
 
 module.exports = NgWelcomeCtrl;
