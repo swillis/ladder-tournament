@@ -3,8 +3,8 @@ jsbp: James' Front-end boilerplate
 
 I wanted to play with Gulp, and I also wanted to better understand how to implement a decently-organised Angular setup within a build tool. These helped a lot:
 
-http://travismaynard.com/writing/getting-started-with-gulp
-http://mindthecode.com/lets-build-an-angularjs-app-with-browserify-and-gulp/
+- http://travismaynard.com/writing/getting-started-with-gulp
+- http://mindthecode.com/lets-build-an-angularjs-app-with-browserify-and-gulp/
 
 _Powered by: Gulp + SASS + Browserify + Angular_
 
@@ -23,12 +23,12 @@ This will build your app and start watching for changes at:
 
 ####CSS
 
-`app/css/` for all your SCSS
-`app/css/components/` for individual components or modules
-`app/css/shared/` for your most general rules (eg html, body)
-`app/css/utils/` for utilities (à la https://github.com/suitcss/utils)
-`app/css/variables.scss` for all your SASS variables
-`app/css/mixins/` for your SASS mixins
+-`app/css/` for all your SCSS
+-`app/css/components/` for individual components or modules
+-`app/css/shared/` for your most general rules (eg html, body)
+-`app/css/utils/` for utilities (à la https://github.com/suitcss/utils)
+-`app/css/variables.scss` for all your SASS variables
+-`app/css/mixins/` for your SASS mixins
 
 Any new components, shared or utils files you create must be imported in `app/css/main.scss` - it's this file which Gulp processes to create `build/assets/css/main.css`
 
@@ -36,8 +36,8 @@ Reminder: any new SCSS files you create that use variables need to `@import 'var
 
 ####HTML
 
-`app/pages/index.html` is the app's index page
-Folders can be added within `app/pages/` eg `app/pages/your-section-name/index.html`
+-`app/pages/index.html` is the app's index page
+-Folders can be added within `app/pages/` eg `app/pages/your-section-name/index.html`
 
 ####JS
 
