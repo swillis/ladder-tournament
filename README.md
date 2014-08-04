@@ -6,7 +6,7 @@ I wanted to play with [Gulp](http://gulpjs.com/), and I also wanted to better un
 - http://travismaynard.com/writing/getting-started-with-gulp
 - http://mindthecode.com/lets-build-an-angularjs-app-with-browserify-and-gulp/
 
-Ultimately it would probably be easier and safer to use [Yeoman](http://yeoman.io/), but where's the fun in that?
+Ultimately it would probably be easier and safer to use something like [Yeoman](http://yeoman.io/), but where's the fun in that?
 
 ### Running locally
 
@@ -48,7 +48,7 @@ Gulp sends your HTML into `build/` eg `build/index.html`, `build/your-section-na
 
 Any new components, shared or utils files you create must be imported within `app/css/main.scss`, which is the file Gulp processes to create your final stylesheet at `build/assets/css/main.css`.
 
-Reminder: any new SCSS files you create that use variables need to `@import 'variables';` at the top, and if they include any mixins you've added, they need to `@import 'mixins/your-mixin-name'` as well!
+Don't forget `@import 'variables';` at the top of any new files that include variables - and `@import 'mixins/your-mixin-name';` in any new files where you've used `@include your-mixin-name`, and so on.
 
 ####JS
 
@@ -58,4 +58,4 @@ Instructions coming soon! Angular setup needs a bit more work.
 
 ===
 
-_Powered by: [Gulp](http://gulpjs.com/) + [SASS](http://sass-lang.com/) + [Browserify](http://browserify.org/) + [Angular](https://angularjs.org/)_
+_Powered by: [Gulp](http://gulpjs.com/) + [SASS](http://sass-lang.com/) + [Browserify](http://browserify.org/) + [Angular](https://angularjs.org/) + [more besides](https://github.com/jamesshedden/jsbp/blob/master/package.json)_
