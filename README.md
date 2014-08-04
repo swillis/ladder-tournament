@@ -15,7 +15,7 @@ $ npm install
 $ gulp start
 ```
 
-This will build your app and start watching for changes at `http://localhost:5000` (which will be launched in your default browser after running `$ gulp start`.
+This will build your app and start watching for changes at `http://localhost:5000` (which will be launched in your default browser after running `$ gulp start`).
 
 Any changes to HTML, SCSS & JS will cause open browser sessions to reload - currently seems to be a bit slow and occasionally unresponsive for JS.
 
