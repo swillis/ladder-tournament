@@ -6,7 +6,9 @@ I wanted to play with [Gulp](http://gulpjs.com/), and I also wanted to better un
 - http://travismaynard.com/writing/getting-started-with-gulp
 - http://mindthecode.com/lets-build-an-angularjs-app-with-browserify-and-gulp/
 
-SASS + Autoprefixer + source maps ftw.
+I hear [Yeoman](http://yeoman.io/)'s good for this sort of thing. It's no doubt easier to setup and safer to use than what I've hacked together here, but where's the fun in that?
+
+[SASS](http://sass-lang.com/) + [Autoprefixer](https://github.com/ai/autoprefixer) + [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) ftw.
 
 ### Running locally
 
