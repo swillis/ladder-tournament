@@ -8,9 +8,7 @@ I wanted to play with [Gulp](http://gulpjs.com/), and I also wanted to better un
 
 Ultimately it would probably be easier and safer to use something like [Yeoman](http://yeoman.io/), but where's the fun in that?
 
-
 ### Running locally
-===
 
 First, install [Gulp](http://gulpjs.com/) if you don't have it already:
 
@@ -30,9 +28,7 @@ This will build your app and start watching for changes at `http://localhost:500
 
 Any changes to HTML, SCSS & JS will cause open browser sessions to reload.
 
-
 ### Stuff that happens
-===
 
 ####HTML
 
@@ -59,7 +55,6 @@ Don't forget `@import 'variables';` at the top of any new files that include var
 `app/js/` -> `build/assets/app.js`
 
 Instructions coming soon! Angular setup needs a bit more work.
-
 
 ===
 
