@@ -35,7 +35,7 @@ Any changes to HTML, SCSS & JS will cause open browser sessions to reload.
 - `app/pages/index.html` is the app's index page
 - Folders can be added within `app/pages/` eg `app/pages/your-section-name/index.html`
 
-Gulp sends your HTML into `build/` eg `build/index.html`, `build/your-section-name/index.html`.
+Gulp sends your HTML into `build/` eg `build/index.html` and `build/your-section-name/index.html` (which you could visit at `http://localhost:5000/` and `http://localhost:5000/your-section-name/` respectively)
 
 ####CSS
 
