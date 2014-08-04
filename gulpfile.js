@@ -65,4 +65,4 @@ gulp.task('watch', function(event) {
 });
 
 // Default Task
-gulp.task('default', ['connect', 'lint', 'sass', 'browserify', 'html', 'watch']);
+gulp.task('build', ['connect', 'lint', 'sass', 'browserify', 'html', 'watch']);
