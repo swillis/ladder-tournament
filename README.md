@@ -28,7 +28,7 @@ This will build your app and start watching for changes at `http://localhost:500
 
 Any changes to HTML, SCSS & JS will cause open browser sessions to reload.
 
-### How it works (sort of)
+### Stuff that happens
 
 ####HTML
 
