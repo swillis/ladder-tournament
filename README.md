@@ -6,7 +6,7 @@ I wanted to play with [Gulp](http://gulpjs.com/), and I also wanted to better un
 - http://travismaynard.com/writing/getting-started-with-gulp
 - http://mindthecode.com/lets-build-an-angularjs-app-with-browserify-and-gulp/
 
-If you're interested in trying out something similar for yourself, have a read - I didn't find it too difficult and I'm rubbish at this sort of thing. It would probably be even easier and safer to use [Yeoman](http://yeoman.io/), but where's the fun in that?
+Ultimately it would probably be easier and safer to use [Yeoman](http://yeoman.io/), but where's the fun in that?
 
 _Powered by: [Gulp](http://gulpjs.com/) + [SASS](http://sass-lang.com/) + [Browserify](http://browserify.org/) + [Angular](https://angularjs.org/)_
 
@@ -28,7 +28,7 @@ $ gulp start
 
 This will build your app and start watching for changes at `http://localhost:5000` (which will be launched in your default browser after running `$ gulp start`).
 
-Any changes to HTML, SCSS & JS will cause open browser sessions to reload. Currently seems to be a bit slow and occasionally unresponsive for JS - sorry about that.
+Any changes to HTML, SCSS & JS will cause open browser sessions to reload.
 
 ### How it works (sort of)
 
@@ -56,4 +56,4 @@ Reminder: any new SCSS files you create that use variables need to `@import 'var
 
 `app/js/` -> `build/assets/app.js`
 
-Instructions coming soon! ie When I improve the Angular setup.
+Instructions coming soon! Angular setup needs a bit more work first.
