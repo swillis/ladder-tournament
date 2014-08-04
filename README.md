@@ -8,8 +8,6 @@ I wanted to play with [Gulp](http://gulpjs.com/), and I also wanted to better un
 
 Ultimately it would probably be easier and safer to use [Yeoman](http://yeoman.io/), but where's the fun in that?
 
-_Powered by: [Gulp](http://gulpjs.com/) + [SASS](http://sass-lang.com/) + [Browserify](http://browserify.org/) + [Angular](https://angularjs.org/)_
-
 ### Running locally
 
 First, install [Gulp](http://gulpjs.com/) if you don't have it already:
@@ -56,4 +54,8 @@ Reminder: any new SCSS files you create that use variables need to `@import 'var
 
 `app/js/` -> `build/assets/app.js`
 
-Instructions coming soon! Angular setup needs a bit more work first.
+Instructions coming soon! Angular setup needs a bit more work.
+
+===
+
+_Powered by: [Gulp](http://gulpjs.com/) + [SASS](http://sass-lang.com/) + [Browserify](http://browserify.org/) + [Angular](https://angularjs.org/)_
