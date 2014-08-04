@@ -7,5 +7,9 @@ Gulp + SASS + Browserify + Angular
 
 ```
 $ npm install
-$ gulp build
+$ gulp start
 ```
+
+This will build your app and start watching for changes at:
+
+`http://localhost:5000`

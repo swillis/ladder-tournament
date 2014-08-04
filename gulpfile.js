@@ -58,11 +58,11 @@ gulp.task('browserify', function() {
 });
 
 // Watch Files For Changes
-gulp.task('watch', function(event) {
+gulp.task('watch', function() {
     gulp.watch(['./app/js/*.js', './app/js/*/*.js'], ['lint', 'browserify']);
     gulp.watch(['./app/css/*.scss', './app/css/*/*.scss'], ['sass']);
     gulp.watch(['./app/pages/*.html', './app/pages/*/*.html'], ['html']);
 });
 
 // Default Task
-gulp.task('build', ['connect', 'lint', 'sass', 'browserify', 'html', 'watch']);
+gulp.task('start', ['connect', 'lint', 'sass', 'browserify', 'html', 'watch']);
