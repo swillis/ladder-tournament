@@ -1,0 +1,19 @@
+{
+  "name": "jsbp",
+  "version": "0.0.0",
+  "authors": [
+    "jamesshedden <james@jshedden.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
