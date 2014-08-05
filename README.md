@@ -9,6 +9,7 @@ I wanted to play with [Gulp](http://gulpjs.com/), and I also wanted to better un
 I hear [Yeoman](http://yeoman.io/)'s good for this sort of thing. It's no doubt easier to setup and safer to use than what I've hacked together here, but where's the fun in that?
 
 [SASS](http://sass-lang.com/) + [Autoprefixer](https://github.com/ai/autoprefixer) + [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) ftw.
+
 ===
 
 ### Running locally
@@ -30,6 +31,7 @@ $ gulp start
 This will build your app and start watching for changes at `http://localhost:5000` (which will be launched in your default browser after running `$ gulp start`).
 
 Any changes to HTML, SCSS & JS will cause open browser sessions to reload.
+
 ===
 
 ### Stuff that happens
