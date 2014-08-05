@@ -1,7 +1,9 @@
 'use strict';
 
-var NgWelcomeCtrl = function($scope) {
-  $scope.testVar = 'This text is being controlled by NgWelcomeCtrl';
-};
-
-module.exports = NgWelcomeCtrl;
+angular.module('ngWelcomeCtrl', [])
+  .controller('NgWelcome', [
+    '$scope', '$window',
+    function NgWelcome($scope, $window) {
+    	$scope.testVar = 'This text is being controlled by NgWelcomeCtrl'
+    }
+  ]);

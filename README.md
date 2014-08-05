@@ -54,9 +54,27 @@ Don't forget `@import 'variables';` at the top of any new files that include var
 
 ####JS
 
-`app/js/` -> `build/assets/app.js`
+- `app/js/app.js` is the main JS file
+- `app/js/controllers`, `app/js/directives` & `app/js/services` for your Angular... controllers, directives & services!
+- Require any new modules in `app/js/app.js` as follows:
 
-Instructions coming soon! Angular setup needs a bit more work.
+```
+require('./controllers/ng-welcome-controller'); 
+// Require any new modules here, like so ^
+```
+
+- Add any new modules as dependencies of the main module:
+
+```
+var app = angular.module('myApp', [
+    'ngWelcomeCtrl',
+    'ngYourDirectiveHere'
+    // Continue listing modules like so ^
+]);
+```
+
+Here's how it's built:
+`app/js/` -> `build/assets/app.js`
 
 ===
 
