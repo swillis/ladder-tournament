@@ -11,15 +11,15 @@ I hear [Yeoman](http://yeoman.io/)'s good for this sort of thing. It's no doubt 
 [SASS](http://sass-lang.com/) + [Autoprefixer](https://github.com/ai/autoprefixer) + [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) ftw.
 
 ### Running locally
-
-1. First, install [Gulp](http://gulpjs.com/) if you don't have it already:
+<br>
+First, install [Gulp](http://gulpjs.com/) if you don't have it already:
 
 ```
 $ npm install -g gulp
 ```
 (You might need to run `$ sudo npm install -g gulp` if that doesn't work)
 
-2. Next:
+Next:
 
 ```
 $ npm install
