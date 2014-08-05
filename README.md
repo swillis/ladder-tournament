@@ -12,15 +12,14 @@ I hear [Yeoman](http://yeoman.io/)'s good for this sort of thing. It's no doubt 
 
 ### Running locally
 
-
-First, install [Gulp](http://gulpjs.com/) if you don't have it already:
+1. First, install [Gulp](http://gulpjs.com/) if you don't have it already:
 
 ```
 $ npm install -g gulp
 ```
 (You might need to run `$ sudo npm install -g gulp` if that doesn't work)
 
-Next:
+2. Next:
 
 ```
 $ npm install
