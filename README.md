@@ -65,7 +65,8 @@ Don't forget `@import 'variables';` at the top of any new files that include var
 - Require any new modules in `app/js/app.js` as follows:
 
 ```
-require('./controllers/ng-welcome-controller'); 
+require('./controllers/ng-welcome-controller');
+require('./directives/ng-your-directive-here-directive');
 // Require any new modules here, like so ^
 ```
 
