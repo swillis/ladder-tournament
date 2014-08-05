@@ -73,8 +73,7 @@ var app = angular.module('myApp', [
 ]);
 ```
 
-Here's how it's built:
-`app/js/` -> `build/assets/app.js`
+Gulp uses `app/js/app.js` as the entry point for your JS app & squashes it all into `build/assets/app.js`.
 
 ===
 
