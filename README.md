@@ -80,6 +80,17 @@ var app = angular.module('myApp', [
 ]);
 ```
 
+- Then make sure that you've added `ng-app="myApp"` to whatever HTML element makes sense - in my example `index.html` you'll find it attached to `<html>` like so:
+
+```
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <title>James' Boilerplate</title>
+  <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+```
+
 Gulp uses `app/js/app.js` as the entry point for your JS app & squashes it all into `build/assets/app.js`.
 
 ===
