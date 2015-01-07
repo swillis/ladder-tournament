@@ -4,12 +4,17 @@
   <title>James' Boilerplate</title>
   <link href="/assets/css/main.css" rel="stylesheet">
 </head>
-<body ng-controller='NgWelcome'>
-  <h1>Hello World!</h1>
-  <p>
-  	<input type="text" ng-model="testVar">
-  </p>
-  <p>{{testVar}}</p>
+<body>
+    
+    <a ui-sref="#">James' App</a>
+
+    <ul>
+      <li><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="about">About</a></li>
+    </ul>
+
+    <div ui-view></div>
+
   <script src="/assets/js/app.js"></script>
 </body>
 </html>

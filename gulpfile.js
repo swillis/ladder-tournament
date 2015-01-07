@@ -24,14 +24,14 @@ gulp.task('connect', function() {
 });
 
 gulp.task('html', function () {
-  return gulp.src(['./app/pages/*.html', './app/pages/*/*.html'], { base: './app/pages'})
+  return gulp.src(['./app/**/*.html'], { base: './app'})
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload());
 });
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('./app/js/*.js')
+    return gulp.src('./app/assets/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(connect.reload());
@@ -39,7 +39,7 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('./app/css/main.scss')
+    return gulp.src('./app/assets/css/main.scss')
         .pipe(sass({sourceComments: 'map', sourceMap: 'sass'}))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8", {
           map: true,
@@ -53,7 +53,7 @@ gulp.task('sass', function() {
 // Browserify task
 gulp.task('browserify', function() {
   // Single point of entry (make sure not to src ALL your files, browserify will figure it out for you)
-  gulp.src(['./app/js/app.js'])
+  gulp.src(['./app/assets/js/app.js'])
   .pipe(browserify({
     insertGlobals: true,
     debug: true
@@ -75,9 +75,9 @@ gulp.task("open", function(){
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['./app/js/*.js', './app/js/*/*.js'], ['lint', 'browserify']);
-    gulp.watch(['./app/css/*.scss', './app/css/*/*.scss'], ['sass']);
-    gulp.watch(['./app/pages/*.html', './app/pages/*/*.html'], ['html']);
+    gulp.watch(['./app/assets/**/*.js'], ['lint', 'browserify']);
+    gulp.watch(['./app/assets/**/*.scss'], ['sass']);
+    gulp.watch(['./app/**/*.html'], ['html']);
 });
 
 // Default Task
