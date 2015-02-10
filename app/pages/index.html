@@ -4,12 +4,34 @@
   <title>James' Boilerplate</title>
   <link href="/assets/css/main.css" rel="stylesheet">
 </head>
-<body ng-controller='NgWelcome'>
-  <h1>Hello World!</h1>
-  <p>
-  	<input type="text" ng-model="testVar">
-  </p>
-  <p>{{testVar}}</p>
+<body ng-controller='GithubApiController'>
+  <div class="site-container">
+    <h1 class="site-heading">Movie Bio Mistakes</h1>
+    <div class="controls">
+      <form ng-submit="searchFilms(ctrl.input)">
+        <input ng-model="ctrl.input" 
+        class="controls__input"
+        type="text">
+        <input type="submit"
+        value="Make a mistake"
+        class="controls__button">
+        </input>
+      </form>
+    </div>
+    <div class="plots">
+      <div class="plots__container">
+        <div ng-repeat="plot in plots" 
+        class="plots__plot">
+          {{ plot }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul style="color: white">
+    {{ plots }}
+    <li ng-repeat="plot in plots">{{plot.length}}</li>
+  </ul>
+
   <script src="/assets/js/app.js"></script>
 </body>
 </html>

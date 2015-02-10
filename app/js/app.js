@@ -2,10 +2,10 @@
 
 var angular = require('angular');
 
-require('./controllers/ng-welcome-controller'); 
+require('./controllers/github-api.controller'); 
 
 var app = angular.module('app', [
-	'ngWelcomeCtrl'
+	'githubApiControllerModule',
 ]);
 
 function isSupportedBrowser() {

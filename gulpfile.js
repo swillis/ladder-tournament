@@ -24,7 +24,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('html', function () {
-  return gulp.src(['./app/pages/*.html', './app/pages/*/*.html'], { base: './app/pages'})
+  return gulp.src('./app/pages/**/*.html', { base: './app/pages/' })
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload());
 });

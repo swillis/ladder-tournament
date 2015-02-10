@@ -1,9 +1,15 @@
 @import 'variables';
 
 html {
-	box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
-	background: $body-background-color;
+  background: $body-background-color;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  text-align: center;
 }

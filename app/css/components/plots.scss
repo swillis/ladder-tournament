@@ -1,0 +1,28 @@
+.plots {
+  padding: 20px;
+  background: black;
+  display: inline-block;
+}
+
+.plots__container {
+  position: relative;
+  width: 350px;
+  height: 150px;
+  font-size: 18px;
+}
+
+.plots__plot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  color: white;
+}
+
+.plots__plot:nth-child(2) {
+  opacity: 1;
+  height: 68px;
+  overflow: hidden;
+}
