@@ -8,15 +8,10 @@
   <div class="site-container">
     <h1 class="site-heading">Movie Bio Mistakes</h1>
     <div class="controls">
-      <form ng-submit="searchFilms(ctrl.input)">
-        <input ng-model="ctrl.input" 
-        class="controls__input"
-        type="text">
-        <input type="submit"
-        value="Yep"
-        class="controls__button">
-        </input>
-      </form>
+      <button ng-click="searchFilms()"
+      class="controls__button">
+        Yep
+      </button>
     </div>
     <div class="plots">
       <div class="plots__container">

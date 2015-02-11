@@ -6,31 +6,14 @@ angular.module('githubApiControllerModule', [])
   .controller('GithubApiController', [
     '$scope', '$http',
     function GithubApiController($scope, $http) {
-        
-
-      // Take 2 search terms
-
+  
       var plots = [];
-      $scope.plots = plots;
-
-      function logError() {
-        console.log("There's been a problem.");
-      }
-
-      function shuffleResult(result) {
-        var shuffled = _.shuffle(result)[0];
-        searchById(shuffled.imdbID);
-      }
-
-      function searchById(id) {
-        $http.get("http://www.omdbapi.com/?r=json&plot=short&i="+id)
-          .then(function(response){
-            plots.push(response.data.Plot);
-          });
-      }
 
       function doStuff(plots) {
         console.log(plots);
+        $scope.plots = plots.sort(function(a, b){
+          return b.length - a.length;
+        });
       }
 
       $scope.searchFilms = function() {
@@ -48,46 +31,34 @@ angular.module('githubApiControllerModule', [])
         $http.get("http://www.omdbapi.com/?r=json&s="+firstTerm)
           .then(function(response){
 
-            shuffleResult(response.data.Search);
+            var shuffled = _.shuffle(response.data.Search)[0];
 
-            $http.get("http://www.omdbapi.com/?r=json&s="+secondTerm)
+            $http.get("http://www.omdbapi.com/?r=json&i="+shuffled.imdbID)
               .then(function(response){
-                shuffleResult(response.data.Search);
-                doStuff(plots);
-              });
+
+                plots.push(response.data.Plot);
+
+              })
+              .then(function(){
+
+                $http.get("http://www.omdbapi.com/?r=json&s="+secondTerm)
+                  .then(function(response){
+
+                    var shuffled = _.shuffle(response.data.Search)[0];
+
+                    $http.get("http://www.omdbapi.com/?r=json&i="+shuffled.imdbID)
+                      .then(function(response){
+
+                        plots.push(response.data.Plot);
+
+                      }).then(function(){
+
+                        doStuff(plots);
+
+                      });
+                  });
+              })
           });
-
-
-        // $http.get("http://www.omdbapi.com/?r=json&s="+searchTerm)
-        //   .success(function(response) {
-        //     var data  = response.Search;
-
-        //     var arr = [];
-
-        //     for (var i = 0; i < data.length; i++) {
-        //       arr.push(data[i].imdbID);
-        //     }
-
-        //     var shuffledArray = _.shuffle(arr);
-
-        //     var chosenIds = [];
-
-        //     for (var i = 0; i < 2; i++) {
-        //       chosenIds.push(shuffledArray[i]);
-        //     }
-
-        //     var plotArray = [];
-
-        //     for (var i = 0; i < chosenIds.length; i++) {
-        //       $http.get("http://www.omdbapi.com/?r=json&i="+chosenIds[i])
-        //         .success(function(response) {
-        //           plotArray.push(response.Plot);
-        //         });
-        //     }
-
-        //     $scope.plots = plotArray;
-
-        //   });
       }
 
     }
