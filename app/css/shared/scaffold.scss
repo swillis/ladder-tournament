@@ -10,6 +10,10 @@ html {
 
 body {
   background: $body-background-color;
-  font-family: Helvetica Neue, Arial, sans-serif;
+  font-family: $font-family-base;
   text-align: center;
+}
+
+button {
+	font-family: $font-family-base;
 }
