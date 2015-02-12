@@ -8,7 +8,6 @@
 </head>
 <body ng-controller='PlotsController'>
   <div class="site-container">
-    <h1 class="site-heading">Movie Bio Mistakes</h1>
     <div class="controls">
       <button ng-click="searchFilms()"
       class="controls__button">
@@ -17,9 +16,8 @@
     </div>
     <div class="plots">
       <div class="plots__container">
-        <div ng-repeat="plot in plots" 
-        class="plots__plot">
-          {{ plot }}
+        <div class="plots__plot">
+          {{ plots }}
         </div>
       </div>
     </div>

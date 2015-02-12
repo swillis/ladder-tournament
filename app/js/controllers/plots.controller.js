@@ -13,8 +13,20 @@ angular.module('plotsControllerModule', [])
         var plots = plots.sort(function(a, b){
           return b.length - a.length;
         });
-        plots[1] = plots[1].replace(/\.$/, "");
+
+        // console.log(plots[0], plots[0].length, plots[1], plots[1].length);
+
+        var trimmedString = plots[0].slice(plots[1].length);
+        // trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+
+        console.log(trimmedString)
+
+        // plots[0] = trimmedString;
+        // plots[1] = plots[1].replace(/\.$/, "");
+        // plots = plots.join(' ');
+
         $scope.plots = plots;
+
       }
 
       $scope.searchFilms = function() {
