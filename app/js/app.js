@@ -2,10 +2,10 @@
 
 var angular = require('angular');
 
-require('./controllers/github-api.controller'); 
+require('./controllers/plots.controller'); 
 
 var app = angular.module('app', [
-	'githubApiControllerModule',
+	'plotsControllerModule',
 ]);
 
 function isSupportedBrowser() {

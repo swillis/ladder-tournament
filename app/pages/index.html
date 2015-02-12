@@ -4,13 +4,13 @@
   <title>James' Boilerplate</title>
   <link href="/assets/css/main.css" rel="stylesheet">
 </head>
-<body ng-controller='GithubApiController'>
+<body ng-controller='PlotsController'>
   <div class="site-container">
     <h1 class="site-heading">Movie Bio Mistakes</h1>
     <div class="controls">
       <button ng-click="searchFilms()"
       class="controls__button">
-        Yep
+        Generate
       </button>
     </div>
     <div class="plots">
@@ -22,11 +22,6 @@
       </div>
     </div>
   </div>
-  <ul style="color: white">
-    {{ plots }}
-    <li ng-repeat="plot in plots">{{plot.length}}</li>
-  </ul>
-
   <script src="/assets/js/app.js"></script>
 </body>
 </html>
