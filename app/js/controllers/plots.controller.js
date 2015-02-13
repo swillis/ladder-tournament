@@ -14,18 +14,18 @@ angular.module('plotsControllerModule', [])
           return b.length - a.length;
         });
 
-        // console.log(plots[0], plots[0].length, plots[1], plots[1].length);
+        var firstString = plots[0];
+        var secondString = plots[1];
 
-        var trimmedString = plots[0].slice(plots[1].length);
-        // trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+        secondString = secondString.slice(0,-1);
 
-        console.log(trimmedString)
+        var firstStringArray = firstString.split(' ');
+        var secondStringArray = secondString.split(' ');
+        firstStringArray = firstStringArray.splice(secondStringArray.length, firstStringArray.length);
 
-        // plots[0] = trimmedString;
-        // plots[1] = plots[1].replace(/\.$/, "");
-        // plots = plots.join(' ');
+        var plots = secondStringArray.concat(firstStringArray);
 
-        $scope.plots = plots;
+        $scope.plots = plots.join(' ');
 
       }
 
@@ -68,6 +68,7 @@ angular.module('plotsControllerModule', [])
                   });
               })
           });
+
       }
 
     }
