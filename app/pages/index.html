@@ -6,16 +6,23 @@
   <script src="//use.typekit.net/fns3nwp.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 </head>
-<body ng-controller='PlotsController'>
-  <div class="site-container">
+<body>
+  <div plots class="site-container">
     <div class="controls">
       <button ng-click="searchFilms()"
-      class="controls__button">
-        Generate
+      class="controls__button"> 
+        <span ng-if="!isRequesting">
+          Generate {{ foo }}
+        </span>
+        <span ng-if="isRequesting">
+          Generating...
+        </span>
       </button>
     </div>
-    <div class="plots">
-      {{ plots }}
+    <div ng-if="hasClicked"
+      ng-class="{ 'is-visible': !isRequesting }"
+      class="plots">
+      {{ plot }}
     </div>
   </div>
   <script src="/assets/js/app.js"></script>
