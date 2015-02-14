@@ -4,8 +4,8 @@
   display: inline-block;
   width: 350px;
   font-size: 18px;
-  background: black;
-  color: white;
+  background: #eee;
+  color: #222;
   text-align: left;
   opacity: 0;
   filter: blur(2px);
@@ -17,4 +17,30 @@
   opacity: 1;
   filter: blur(0);
   transform: scale(1);
+}
+
+.plots__title {
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}
+
+.plots__director {
+  font-size: 16px;
+  margin: 0;
+  color: #999;
+}
+
+.plots__actors {
+  font-size: 16px;
+  color: #999;
+  margin: 0 0 10px 0;
+}
+
+.plots__plot {
+  margin: 0;
+}
+
+.plots__names {
+  color: #222;
 }

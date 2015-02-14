@@ -12,7 +12,7 @@
       <button ng-click="searchFilms()"
       class="controls__button"> 
         <span ng-if="!isRequesting">
-          Generate {{ foo }}
+          Generate
         </span>
         <span ng-if="isRequesting">
           Generating...
@@ -22,7 +22,19 @@
     <div ng-if="hasClicked"
       ng-class="{ 'is-visible': !isRequesting }"
       class="plots">
-      {{ plot }}
+      <h1 class="plots__title">
+        <strong>{{ fakeFilm.title }}</strong>
+        ({{ fakeFilm.year }})
+      </h1>
+      <p class="plots__director">
+        Directed by 
+        <span class="plots__names">{{ fakeFilm.director }}</span>
+      </p>
+      <p class="plots__actors">
+        Starring
+        <span class="plots__names">{{ fakeFilm.actors }}</span>
+      </p>
+      <p class="plots__plot">{{ fakeFilm.plot }}</p>
     </div>
   </div>
   <script src="/assets/js/app.js"></script>

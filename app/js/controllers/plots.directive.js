@@ -10,10 +10,10 @@ angular.module('plotsComponentModule', [])
       restrict: 'A',
       link: function(scope) {
 
-        var plots;
+        var films;
         var isRequesting;
         var hasClicked;
-        var plot;
+        var fakeFilm = {};
 
         scope.isRequesting = false;
         scope.hasClicked = false;
@@ -22,44 +22,111 @@ angular.module('plotsComponentModule', [])
         var words = ['the', 'you', 'me', 'us', 'our', 'love', 'war',
           'hate', 'red', 'blue', 'green', 'yellow', 'black', 'white',
           'sex', 'bird', 'tree', 'cat', 'dog', 'bear', 'day', 'night',
+          'car', 'bike', 'house', 'school', 'work', 'death', 'life',
+          'die', 'live', 'kill', 'fish', 'sea', 'land', 'earth', 'space', 'planet'
         ];
 
-        function makePlots(plots) {
-          var plots = plots.sort(function(a, b){
-            return b.length - a.length;
+        function makeFilm(films) {
+
+          films = films.sort(function(a, b){
+            return b.plot.length - a.plot.length;
           });
 
-          var firstString = plots[0];
-          var secondString = plots[1];
+          var firstFilm = films[0];
+          var secondFilm = films[1];
 
-          secondString = secondString.slice(0,-1);
-
-          var firstStringArray = firstString.split(' ');
-          var secondStringArray = secondString.split(' ');
-
-          firstStringArray = firstStringArray.splice(secondStringArray.length, firstStringArray.length);
-
-          var plots = secondStringArray.concat(firstStringArray);
-          plots = plots.join(' ');
-
-          if (plots.indexOf("...") > -1 || firstStringArray.length === secondStringArray.length) {
+          if (
+            firstFilm.plot.indexOf("...") > -1 ||
+            secondFilm.plot.indexOf("...") > -1 || 
+            firstFilm.plot === "N/A" ||
+            secondFilm.plot === "N/A"
+          ) {
+            // Reject strings ending in "..."
             searchFilms();
           } else {
-            scope.plot = plots;
-            scope.isRequesting = false;
+            secondFilm.plot = secondFilm.plot.slice(0,-1);
+
+            var firstPlotWords = firstFilm.plot.split(' ');
+            var secondPlotWords = secondFilm.plot.split(' ');
+
+            if (firstPlotWords.length === secondPlotWords.length) {
+              // Reject arrays of the same length, as there's no diffence
+              // that will allow combination. Maybe make a different way
+              // to deal with these?
+              searchFilms();
+            } else {
+              firstPlotWords = firstPlotWords.splice(secondPlotWords.length, firstPlotWords.length);
+
+              var plots = secondPlotWords.concat(firstPlotWords);
+              var plot = plots.join(' ');
+
+              fakeFilm.plot = plot;
+              fakeFilm.title = makeTitle(firstFilm.title, secondFilm.title);
+              fakeFilm.director = makeDirector(firstFilm.director, secondFilm.director);
+              fakeFilm.year = firstFilm.year;
+              fakeFilm.actors = makeActors(firstFilm.actors, secondFilm.actors);
+
+              scope.isRequesting = false; 
+            }
           }
+        }
+
+        function makeTitle(firstTitle, secondTitle) {
+          var firstTitleWords = firstTitle.split(' ');
+          var secondTitleWords = secondTitle.split(' ');
+
+          firstTitleWords = firstTitleWords.splice(0, Math.round(firstTitleWords.length / 2));
+          secondTitleWords = secondTitleWords.splice(Math.round(secondTitleWords.length / 2, secondTitleWords.length));
+
+          var titles = firstTitleWords.concat(secondTitleWords);
+          var title = titles.join(' ');
+          return title;
+        }
+
+        function makeDirector(firstDirector, secondDirector) {
+          var firstDirectorWords = firstDirector.split(' ');
+          var secondDirectorWords = secondDirector.split(' ');
+
+          var firstDirectorWords = firstDirectorWords.slice(0, 1)
+          var secondDirectorWords = secondDirectorWords.slice(secondDirectorWords.length - 1, secondDirectorWords.length);
+
+          var directors = firstDirectorWords.concat(secondDirectorWords);
+          var director = directors.join(' ');
+          return director;
+        }
+
+        function makeActors(firstActors, secondActors) {
+          var firstActorsNames = firstActors.split(', ');
+          var secondActorsNames = secondActors.split(', ');
+
+          firstActorsNames = firstActorsNames.splice(0, Math.round(firstActorsNames.length / 2));
+          secondActorsNames = secondActorsNames.splice(Math.round(secondActorsNames.length / 2, secondActorsNames.length));
+
+          var actors = firstActorsNames.concat(secondActorsNames);
+          actors = [actors.slice(0, -1).join(', '), actors.slice(-1)[0]].join(' and ');
+          return actors;
         }
 
         function getPlot(response) {
           var shuffled = _.shuffle(response.data.Search)[0];
           return $http.get("http://www.omdbapi.com/?r=json&i="+shuffled.imdbID)
             .then(function(response){
-              plots.push(response.data.Plot);
+
+              var film = {
+                title: response.data.Title,
+                year: response.data.Year,
+                director: response.data.Director,
+                genre: response.data.Genre,
+                actors: response.data.Actors,
+                plot: response.data.Plot
+              };
+
+              films.push(film);
             });
         }
 
         var searchFilms = function() {
-          plots = [];
+          films = [];
           scope.hasClicked = true;
           scope.isRequesting = true;
 
@@ -77,10 +144,11 @@ angular.module('plotsComponentModule', [])
                 });
             })
             .then(function(){
-              makePlots(plots);
+              makeFilm(films);
             });
         }
 
+        scope.fakeFilm = fakeFilm;
         scope.searchFilms = searchFilms;
 
       }
