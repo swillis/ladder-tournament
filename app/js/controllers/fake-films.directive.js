@@ -2,10 +2,10 @@
 
 var _ = require('lodash');
 
-angular.module('plotsComponentModule', [])
-  .directive('plots', [
+angular.module('fakeFilmsComponentModule', [])
+  .directive('fakeFilms', [
   '$http',
-  function plotsDirective($http) {
+  function fakeFilmsDirective($http) {
     return {
       restrict: 'A',
       link: function(scope) {
@@ -13,7 +13,9 @@ angular.module('plotsComponentModule', [])
         var films;
         var isRequesting;
         var hasClicked;
-        var fakeFilm = {};
+        var fakeFilm;
+
+        scope.fakeFilms = [];
 
         scope.isRequesting = false;
         scope.hasClicked = false;
@@ -31,10 +33,6 @@ angular.module('plotsComponentModule', [])
 
         function makeFilm(films) {
 
-          films = films.sort(function(a, b){
-            return b.plot.length - a.plot.length;
-          });
-
           var firstFilm = films[0];
           var secondFilm = films[1];
 
@@ -44,33 +42,29 @@ angular.module('plotsComponentModule', [])
             firstFilm.plot === "N/A" ||
             secondFilm.plot === "N/A"
           ) {
-            // Reject strings ending in "..."
+            // Reject strings ending in "..." or with "N/A" as a plot.
+            // Is there a way to test this in the initial requests?
             searchFilms();
           } else {
-            secondFilm.plot = secondFilm.plot.slice(0,-1);
 
             var firstPlotWords = firstFilm.plot.split(' ');
             var secondPlotWords = secondFilm.plot.split(' ');
 
-            if (firstPlotWords.length === secondPlotWords.length) {
-              // Reject arrays of the same length, as there's no diffence
-              // that will allow combination. Maybe make a different way
-              // to deal with these?
-              searchFilms();
-            } else {
-              firstPlotWords = firstPlotWords.splice(secondPlotWords.length, firstPlotWords.length);
+            firstPlotWords = firstPlotWords.slice(firstPlotWords.length * 0.9, firstPlotWords.length);
+            secondPlotWords = secondPlotWords.slice(0, secondPlotWords.length * 0.6);
 
-              var plots = secondPlotWords.concat(firstPlotWords);
-              var plot = plots.join(' ');
+            var plots = secondPlotWords.concat(firstPlotWords);
+            var plot = plots.join(' ');
 
-              fakeFilm.plot = plot;
-              fakeFilm.title = makeTitle(firstFilm.title, secondFilm.title);
-              fakeFilm.director = makeDirector(firstFilm.director, secondFilm.director);
-              fakeFilm.year = firstFilm.year;
-              fakeFilm.actors = makeActors(firstFilm.actors, secondFilm.actors);
+            fakeFilm = {};
+            fakeFilm.plot = plot;
+            fakeFilm.title = makeTitle(firstFilm.title, secondFilm.title);
+            fakeFilm.director = makeDirector(firstFilm.director, secondFilm.director);
+            fakeFilm.year = firstFilm.year;
+            fakeFilm.actors = makeActors(firstFilm.actors, secondFilm.actors);
 
-              scope.isRequesting = false; 
-            }
+            scope.fakeFilms.push(fakeFilm);
+            scope.isRequesting = false; 
           }
         }
 
@@ -151,10 +145,7 @@ angular.module('plotsComponentModule', [])
             });
         }
 
-        scope.fakeFilm = fakeFilm;
         scope.searchFilms = searchFilms;
-
-        // searchFilms();
 
       }
     };

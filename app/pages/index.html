@@ -7,7 +7,8 @@
   <script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-  <div plots class="site-container">
+  <div fake-films class="site-container">
+
     <div class="controls">
       <button ng-click="searchFilms()"
       class="controls__button"> 
@@ -19,23 +20,24 @@
         </span>
       </button>
     </div>
-    <div ng-if="hasClicked"
-      ng-class="{ 'is-visible': !isRequesting }"
-      class="plots">
-      <h1 class="plots__title">
+
+    <div ng-repeat="fakeFilm in fakeFilms.slice().reverse()"
+      class="fake-film">
+      <h1 class="fake-film__title">
         <strong>{{ fakeFilm.title }}</strong>
         ({{ fakeFilm.year }})
       </h1>
-      <p class="plots__director">
+      <p class="fake-film__director">
         Directed by 
-        <span class="plots__names">{{ fakeFilm.director }}</span>
+        <span class="fake-film__names">{{ fakeFilm.director }}</span>
       </p>
-      <p class="plots__actors">
+      <p class="fake-film__actors">
         Starring
-        <span class="plots__names">{{ fakeFilm.actors }}</span>
+        <span class="fake-film__names">{{ fakeFilm.actors }}</span>
       </p>
-      <p class="plots__plot">{{ fakeFilm.plot }}</p>
+      <p class="fake-film__plot">{{ fakeFilm.plot }}</p>
     </div>
+
   </div>
   <script src="/assets/js/app.js"></script>
 </body>

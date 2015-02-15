@@ -1,15 +1,11 @@
 'use strict';
 
 var angular = require('angular');
-require('angular-animate'); 
 
-require('./controllers/plots.directive'); 
-require('./controllers/plots.controller'); 
+require('./controllers/fake-films.directive');
 
 var app = angular.module('app', [
-  'ngAnimate',
-  'plotsComponentModule',
-  'plotsControllerModule',
+  'fakeFilmsComponentModule',
 ]);
 
 function isSupportedBrowser() {
