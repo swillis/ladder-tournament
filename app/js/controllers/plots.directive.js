@@ -23,7 +23,10 @@ angular.module('plotsComponentModule', [])
           'hate', 'red', 'blue', 'green', 'yellow', 'black', 'white',
           'sex', 'bird', 'tree', 'cat', 'dog', 'bear', 'day', 'night',
           'car', 'bike', 'house', 'school', 'work', 'death', 'life',
-          'die', 'live', 'kill', 'fish', 'sea', 'land', 'earth', 'space', 'planet'
+          'die', 'live', 'kill', 'fish', 'sea', 'land', 'earth', 'space', 
+          'planet', 'should', 'would', 'could', 'why', 'what', 'how',
+          'where', 'he', 'she', 'him', 'her', 'they', 'can', 'will',
+          'must', 'trust', 'try', 'truth', 'true',
         ];
 
         function makeFilm(films) {
@@ -150,6 +153,8 @@ angular.module('plotsComponentModule', [])
 
         scope.fakeFilm = fakeFilm;
         scope.searchFilms = searchFilms;
+
+        // searchFilms();
 
       }
     };
