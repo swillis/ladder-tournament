@@ -75,7 +75,7 @@ gulp.task("open", function(){
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['./app/js/*.js', './app/js/*/*.js'], ['lint', 'browserify']);
+    gulp.watch(['./app/js/**/*.js'], ['lint', 'browserify']);
     gulp.watch(['./app/css/*.scss', './app/css/*/*.scss'], ['sass']);
     gulp.watch(['./app/pages/*.html', './app/pages/*/*.html'], ['html']);
 });
