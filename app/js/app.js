@@ -2,7 +2,7 @@
 
 var angular = require('angular');
 
-require('./controllers/fake-films.directive');
+require('./components/fake-films/fake-films.directive');
 
 var app = angular.module('app', [
   'fakeFilmsComponentModule',
