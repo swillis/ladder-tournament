@@ -1,5 +1,6 @@
 var http = require('http');
 var connect = require('connect');
+var opn = require('opn');
 var serveStatic = require('serve-static');
 
 var server = connect()
@@ -24,4 +25,5 @@ http.createServer(server)
   })
   .on('listening', function () {
     console.log('\x1B[32mStarted web server on http://localhost:' + port + ' ✓\x1B[0m');
+    opn('http://localhost:' + port);
   });
