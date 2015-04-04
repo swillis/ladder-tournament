@@ -12,6 +12,7 @@
     "fb-flo": "^0.4.0",
     "jspm": "^0.15.0-beta",
     "minimist": "^1.1.1",
+    "opn": "^1.0.1",
     "read-file-stdin": "^0.2.0",
     "rework": "^1.0.1",
     "rework-import": "^2.0.1",
