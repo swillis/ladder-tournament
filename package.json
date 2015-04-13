@@ -11,6 +11,7 @@
     "connect": "^3.3.5",
     "fb-flo": "^0.4.0",
     "jspm": "^0.15.0-beta",
+    "lodash": "^3.6.0",
     "minimist": "^1.1.1",
     "opn": "^1.0.1",
     "read-file-stdin": "^0.2.0",
@@ -23,12 +24,12 @@
   "jspm": {
     "directories": {},
     "dependencies": {
-      "lodash": "npm:lodash@^3.6.0",
       "normalize.css": "github:necolas/normalize.css@^3.0.2"
     },
     "devDependencies": {
       "babel": "npm:babel@^4.7.16",
-      "babel-runtime": "npm:babel-runtime@^4.7.16"
+      "babel-runtime": "npm:babel-runtime@^4.7.16",
+      "core-js": "npm:core-js@^0.8.1"
     },
     "buildConfig": {
       "transpileES6": true,
