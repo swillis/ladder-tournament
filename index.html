@@ -2,9 +2,36 @@
 <html>
   <head>
     <title>James' Boilerplate</title>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="client/app-compiled/css/main-compiled.css" />
   </head>
+
   <body>
+    <h1>The Robert Moncrieff-DeMontfort Collection</h1>
+
+    <div class="gallery">
+      <div class="gallery__content">
+        <div class="robert">
+          <img src="robert.gif">
+        </div>
+
+        <div id="art" class="art is-hidden"></div>
+      </div>
+    </div>
+
+    <div id="form" class="form-container">
+      <form id="name-form" class="form" action="">
+        <label for="name-form-name">
+          <p>Hello and welcome to the gallery! My name's Robert - what's yours?</p>
+        </label>
+
+        <p>
+          <input type="text" id="name-form-name">
+          <input type="submit" value="Here's my name">
+        </p>
+      </form>
+    </div>
+
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>

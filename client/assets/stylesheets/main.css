@@ -1,6 +1,6 @@
 @import 'variables.css';
 
-/* 
+/*
 
 Import any other stylesheets here!
 
@@ -10,3 +10,93 @@ eg
 if there was a /components in this dir that contained example-component.css
 
 */
+
+body {
+  text-align: center;
+  font-family: 'Cardo';
+  background: #f3efe5;
+  color: #685c50;
+  margin: 50px;
+}
+
+input[type="text"] {
+  font-family: 'Cardo';
+  font-size: 16px;
+  padding: 8px;
+  background: white;
+  border: 0;
+  color: #685c50;
+  box-shadow: 1px 1px 1px #a39287;
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  padding: 8px;
+  background: none;
+  color: #685c50;
+  font-family: 'Cardo';
+  font-size: 16px;
+  border: 1px solid #a39287;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+p {
+  font-size: 20px;
+}
+
+input[type="submit"]:hover {
+  background: white;
+}
+
+.art,
+.robert {
+  display: inline-block;
+}
+
+.robert {
+  margin-right: 20px;
+}
+
+.is-loading .robert {
+  background: url('/loading.gif');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.form {
+  width: 100%;
+}
+
+.form-container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.is-loading .robert img {
+  opacity: 0;
+}
+
+.gallery {
+  margin: 30px 50px;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.gallery__content {
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid #685c50;
+}
+
+#art {
+  transform: translateY(0);
+  transition: transform 2s ease;
+}
+
+#art.is-hidden {
+  transition: transform 0.2s ease;
+  padding-top: 2px;
+  transform: translateY(100%);
+}
